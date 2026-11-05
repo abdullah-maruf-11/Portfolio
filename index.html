@@ -24,21 +24,28 @@ h2 em{font-style:normal;color:var(--acc)}
 .lead{color:var(--mut);max-width:620px}
 /* progress + nav */
 #bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),var(--acc2));z-index:60}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + 12px) 16px 0;pointer-events:none}
-nav.s .wrap{box-shadow:0 14px 40px rgba(20,24,40,.14),inset 0 1px 0 rgba(255,255,255,.7)}
-nav .wrap{pointer-events:auto;position:relative;max-width:1000px;height:62px;padding:0 10px 0 18px;display:flex;align-items:center;gap:10px;border-radius:99px;background:color-mix(in srgb,var(--surf) 58%,transparent);backdrop-filter:blur(24px) saturate(190%);-webkit-backdrop-filter:blur(24px) saturate(190%);border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);box-shadow:0 8px 30px rgba(20,24,40,.08),inset 0 1px 0 rgba(255,255,255,.7);transition:box-shadow .35s}
-.logo{font-weight:700;font-size:20px}.logo span{color:var(--acc)}
-.links{flex:1;display:flex;gap:4px;align-items:center}.links a:first-child{margin-left:auto}.links .btn{margin-left:auto}
-.links a{font-size:14px;font-weight:500;color:var(--mut);padding:8px 12px;border-radius:99px;transition:.25s}
-.links a:hover{color:var(--ink);background:color-mix(in srgb,var(--ink) 6%,transparent)}.links a.on{color:var(--acc);background:color-mix(in srgb,var(--acc) 13%,transparent)}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(env(safe-area-inset-top,0px) + 14px) 20px 0;pointer-events:none}
+nav .wrap{position:relative;max-width:1240px;padding:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;pointer-events:none}
+.logo,.links,.dl,#mb{pointer-events:auto}
+.logo{display:flex;align-items:center;gap:10px;font:700 24px "Space Grotesk",sans-serif;letter-spacing:-.03em;padding:0 4px}
+.logo .nm span{color:var(--acc)}
+.logo .lg{width:42px;height:42px;color:var(--mut);flex:none;transition:transform .5s,color .3s}
+.logo:hover .lg{transform:rotate(90deg);color:var(--acc)}
+.links,#mb{background:color-mix(in srgb,var(--surf) 62%,transparent);backdrop-filter:blur(22px) saturate(190%);-webkit-backdrop-filter:blur(22px) saturate(190%);border:1px solid color-mix(in srgb,var(--ink) 8%,transparent);box-shadow:0 6px 20px rgba(20,24,40,.07),inset 0 1px 0 rgba(255,255,255,.7);transition:box-shadow .35s}
+nav.s .links{box-shadow:0 12px 30px rgba(20,24,40,.13),inset 0 1px 0 rgba(255,255,255,.7)}
+.nr{display:contents}
+.links{display:flex;gap:2px;align-items:center;height:46px;padding:4px;border-radius:99px}
+.links a{font-size:13.5px;font-weight:500;color:var(--mut);height:36px;display:inline-flex;align-items:center;padding:0 15px;border-radius:99px;transition:.25s;white-space:nowrap}
+.links a:hover{color:var(--ink)}
+.links a.on{color:#fff;background:var(--acc);box-shadow:0 5px 14px color-mix(in srgb,var(--acc) 38%,transparent)}
+#tg{background:var(--surf);border:1px solid var(--line);color:var(--ink);width:32px;height:32px;margin-left:4px;border-radius:50%;cursor:pointer;font-size:15px;line-height:1;transition:.25s;flex:none}#tg:hover{border-color:var(--acc)}
+.dl{justify-self:start;margin-left:10px;height:46px;padding:0 20px;font-size:13.5px;background:var(--acc);color:#fff;border-color:var(--acc);box-shadow:0 8px 20px color-mix(in srgb,var(--acc) 34%,transparent)}.dl:hover{color:#fff}.dl svg{width:16px;height:16px}
+#mb{display:none;width:44px;height:44px;border-radius:50%;place-items:center;color:var(--ink);font-size:20px;cursor:pointer}
+@media(max-width:960px){#mb{display:grid}nav .wrap{display:flex;justify-content:space-between;gap:14px}.nr{display:flex;align-items:center;margin-left:auto}.links{position:absolute;top:calc(100% + 12px);left:0;right:0;flex-direction:column;align-items:stretch;height:auto;padding:10px;border-radius:26px;opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;transition:.3s}.links.o{opacity:1;transform:none;pointer-events:auto}.links a{justify-content:center;font-size:16px;height:auto;padding:12px}#tg{align-self:center;margin:6px 0 0;width:40px;height:40px}.dl{margin-left:0;padding:0 14px}.dl span{display:none}}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:99px;font-weight:600;font-size:15px;border:1px solid var(--ink);transition:transform .25s,box-shadow .25s,background .25s;cursor:pointer;font-family:inherit}
 .btn.p{background:var(--ink);color:var(--bg)}
 .btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px var(--glow)}
 .btn i{font-style:normal;transition:transform .25s}.btn:hover i{transform:translateX(4px)}
-.links .btn{padding:11px 22px;font-size:14px;background:var(--acc);color:#fff;border-color:var(--acc);box-shadow:0 8px 20px color-mix(in srgb,var(--acc) 35%,transparent)}.links .btn:hover{color:#fff;background:var(--acc)}
-#tg{background:none;border:1px solid var(--line);color:var(--ink);width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:16px;margin-left:6px}
-#mb{display:none;background:none;border:0;color:var(--ink);font-size:26px;cursor:pointer}
-@media(max-width:820px){#mb{display:block;margin-left:auto}.links{position:absolute;top:calc(100% + 10px);left:0;right:0;flex:none;flex-direction:column;align-items:stretch;padding:12px;border-radius:26px;background:color-mix(in srgb,var(--surf) 82%,transparent);backdrop-filter:blur(24px) saturate(190%);-webkit-backdrop-filter:blur(24px) saturate(190%);border:1px solid color-mix(in srgb,var(--ink) 7%,transparent);box-shadow:0 20px 50px rgba(20,24,40,.15);opacity:0;transform:translateY(-10px) scale(.98);pointer-events:none;transition:.3s}.links.o{opacity:1;transform:none;pointer-events:auto}.links a{width:100%;font-size:16px;text-align:center}.links a:first-child,.links .btn{margin-left:0}.links .btn{justify-content:center;margin-top:6px}#tg{align-self:center}}
 /* hero */
 #home{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:120px}
 #fx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.55}
@@ -63,9 +70,6 @@ h1 .g{background:linear-gradient(100deg,var(--acc),var(--acc2));-webkit-backgrou
 .portrait .face{position:absolute;inset:8px;border-radius:50%;background:var(--surf);display:grid;place-items:center;font:700 clamp(80px,14vw,140px)/1 "Space Grotesk",sans-serif;color:var(--acc)}
 .portrait .face{overflow:hidden}
 .portrait .face img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.logo{display:flex;align-items:center;gap:10px}
-.logo .lg{width:40px;height:40px;color:var(--mut);flex:none;transition:transform .5s,color .3s}
-.logo:hover .lg{transform:rotate(90deg);color:var(--acc)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .float{position:absolute;background:var(--surf);border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-size:13px;font-weight:600;box-shadow:0 10px 30px var(--glow);animation:fl 5s ease-in-out infinite}
 .float small{display:block;color:var(--mut);font-weight:400;font-size:11px}
@@ -148,12 +152,12 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <canvas id="fx"></canvas>
 <canvas id="cur"></canvas>
 <nav id="nav"><div class="wrap">
-<a class="logo" href="#home"><svg class="lg" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="24" height="24" rx="7"/><path d="M16 3v5M24 3v5M16 32v5M24 32v5M3 16h5M3 24h5M32 16h5M32 24h5"/><path d="M17 16l-4 4 4 4M23 16l4 4-4 4M21.5 15l-3 10"/><circle cx="29" cy="11.5" r="1.8" fill="var(--acc2)" stroke="none"/></svg>maruf<span>.</span></a>
-<div class="links" id="links">
+<a class="logo" href="#home"><svg class="lg" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="24" height="24" rx="7"/><path d="M16 3v5M24 3v5M16 32v5M24 32v5M3 16h5M3 24h5M32 16h5M32 24h5"/><path d="M17 16l-4 4 4 4M23 16l4 4-4 4M21.5 15l-3 10"/><circle cx="29" cy="11.5" r="1.8" fill="var(--acc2)" stroke="none"/></svg><span class="nm">Maruf<span>.</span></span></a>
+<div class="nr"><div class="links" id="links">
 <a href="#home">Home</a><a href="#about">About</a><a href="#expertise">Expertise</a><a href="#services">Services</a><a href="#work">Work</a><a href="#contact">Contact</a>
-<a class="btn" href="#contact">Let’s Talk →</a>
-<button id="tg" aria-label="Toggle theme">◐</button>
+<button id="tg" aria-label="Toggle day and night mode">◐</button>
 </div>
+<a class="btn dl" href="Abdullah-Al-Maruf-CV.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg><span>Download CV</span></a></div>
 <button id="mb" aria-label="Menu">☰</button>
 </div></nav>
 
@@ -258,6 +262,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <div class="rv"><span class="eyebrow">Get in touch</span><h2>Let’s Build Something <em>Together</em>.</h2><p class="lead">Have an opportunity, a project or a question? Send a message and I’ll reply as soon as I can.</p>
 <div class="cl">
 <a href="mailto:marufabdullahal014@gmail.com"><span>✉️</span><div>Email<small>marufabdullahal014@gmail.com</small></div></a>
+<a href="tel:+8801744815819"><span>📞</span><div>Phone<small>01744815819</small></div></a>
 <a href="https://www.linkedin.com/in/abdullah-al-maruf-/" target="_blank" rel="noopener"><span>💼</span><div>LinkedIn<small>abdullah-al-maruf-</small></div></a>
 <a href="https://www.facebook.com/ich.bin.maruf" target="_blank" rel="noopener"><span>💬</span><div>Facebook<small>ich.bin.maruf</small></div></a>
 </div></div>
